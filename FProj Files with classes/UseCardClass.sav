@@ -1,0 +1,44 @@
+// The "UseCardClass" class.
+import java.awt.*;
+import hsa.Console;
+import java.util.Random;
+
+public class UseCardClass
+{
+    static Console c;           // The output console
+
+    public static void main (String[] args)
+    {
+	Random rand = new Random ();
+	c = new Console ();
+	DelayClass delayObject = new DelayClass ();
+
+	CardClass cardObject = new CardClass ();
+	cardObject.draw (c);
+
+	CardClass cardObject2 = new CardClass (rand.nextInt (4), rand.nextInt (4), rand.nextInt (4));
+	cardObject2.setCentre (200, 100);
+	cardObject2.draw (c);
+
+	CardClass cardObject3 = new CardClass (rand.nextInt (4), rand.nextInt (4), rand.nextInt (4));
+	cardObject3.setCentre (300, 100);
+	cardObject3.draw (c);
+
+	CardClass cardObject4 = new CardClass (rand.nextInt (4), rand.nextInt (4), rand.nextInt (4));
+	cardObject4.setCentre (400, 100);
+	cardObject4.draw (c);
+
+	CardClass cardObject5 = new CardClass (rand.nextInt (4), rand.nextInt (4), rand.nextInt (4));
+	cardObject5.setCentre (500, 100);
+	cardObject5.draw (c);
+
+
+
+	c.println ("wait");
+	delayObject.delay (1000);
+	//cardObject.erase (c);
+
+	c.println ("done");
+	// Place your program here.  'c' is the output console
+    } // main method
+} // UseCardClass class

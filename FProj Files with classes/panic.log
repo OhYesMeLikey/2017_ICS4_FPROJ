@@ -1,0 +1,303 @@
+*** FATAL INTERNAL ERROR in "Ready" ***
+Date: Jun 2 2017 2:00 PM
+
+File Name: C:\Program Files (x86)\Ready to Program\Ready.exe
+Version: 1.7.1  [11]
+File Size: 2908199
+File Date: Oct 7 2003 3:57 PM
+Operating System: After Windows XP
+JVM: Ready Built-in JRE (1.4.2 or later)
+"assert" Statements: disabled
+
+
+Previous Operations:
+    Undo (2) - Undo size: 13014 - Repl from: 0 - Repl to: 13014
+    Delete Selection (1) - Text: 2439a40
+    Text - sz:258:13014 - slFr:74:9:0 - slTo:74:9:13014 - nlA:0
+    Line Starts: 255:12991 256:13012 257:13013 258:13014
+    Delete Selection (2) - From line: 74 - From col: 9 - To line: 74 - To col: 9
+    Delete Selection (3) - sz:0:0 - slFr:0 - slTo:0 - nlA:0
+    Line Starts: 0:0
+    Insert Text (1) - Text: 2439a40 - size: 13014 - clean: 1
+    Text - sz:0:0 - slFr:0 - slTo:0 - nlA:0
+    Line Starts: 0:0
+    Insert Text (2) - numNewLines: 258
+    Insert Text (3) - sz:258:13014 - slFr:13014 - slTo:13014 - nlA:0
+    Line Starts: 255:12991 256:13012 257:13013 258:13014
+    Undo (3) - sz:258:13014 - slFr:3376 - slTo:3376 - nlA:0
+    Line Starts: 255:12991 256:13012 257:13013 258:13014
+  CMD: WM_INITMENU (W)
+  CMD: COMMAND_INDENT
+    Indent (1) - Text: 2439a40
+    Text - sz:258:13014 - slFr:86:32:3376 - slTo:86:32:3376 - nlA:0
+    Line Starts: 255:12991 256:13012 257:13013 258:13014
+    Set Selection (1) - Text: 2439a40 - L: 86 - C: 0
+    Text - sz:258:13014 - slFr:3376 - slTo:3376 - nlA:0
+    Line Starts: 255:12991 256:13012 257:13013 258:13014
+    Set Selection (2) - sz:258:13014 - slFr:3344 - slTo:3344 - nlA:0
+    Line Starts: 255:12991 256:13012 257:13013 258:13014
+    Indent (2) - sz:258:13014 - slFr:3344 - slTo:3344 - nlA:0
+    Line Starts: 255:12991 256:13012 257:13013 258:13014
+  CMD: WM_INITMENU (W)
+  CMD: COMMAND_RUN
+    Run (1) - Window: 30344 - Ex: 1 - Args: 0 - Step: 0
+    Don't compile Console.java - Console.java older than Console.class
+    Don't compile ConsoleParent.java - ConsoleParent.java older than ConsoleParent.class
+    Don't compile FatalError.java - FatalError.java older than FatalError.class
+    Don't compile CloseableDialog.java - CloseableDialog.java older than CloseableDialog.class
+    Don't compile Message.java - Message.java older than Message.class
+    Don't compile ConsoleCanvas.java - ConsoleCanvas.java older than ConsoleCanvas.class
+    Don't compile SavePrint.java - SavePrint.java older than SavePrint.class
+    Don't compile SavePrint$Message.java - No SavePrint$Message.java
+    Don't compile SavePrint$Status.java - No SavePrint$Status.java
+    Don't compile DrawGraphics.java - DrawGraphics.java older than DrawGraphics.class
+    Don't compile ConsoleFrame.java - ConsoleFrame.java older than ConsoleFrame.class
+    Don't compile ConsoleEdges.java - ConsoleEdges.java older than ConsoleEdges.class
+    Don't compile ConsoleCanvasGraphics.java - ConsoleCanvasGraphics.java older than ConsoleCanvasGraphics.class
+    Don't compile ShapeClass.java - ShapeClass.java older than ShapeClass.class
+    Jikes compiling CardClass
+    Don't compile DiamondClass.java - DiamondClass.java older than DiamondClass.class
+    Don't compile SuitClass.java - SuitClass.java older than SuitClass.class
+    Don't compile ClubClass.java - ClubClass.java older than ClubClass.class
+    Don't compile HeartClass.java - HeartClass.java older than HeartClass.class
+    Don't compile SpadeClass.java - SpadeClass.java older than SpadeClass.class
+  CMD: WM_ACTIVATE (W)
+  CMD: WM_ACTIVATE (W)
+  CMD: WM_INITMENU (W)
+  CMD: WM_ACTIVATE (W)
+  CMD: WM_ACTIVATE (W)
+  CMD: WM_ACTIVATE (W)
+  CMD: WM_ACTIVATE (W)
+  CMD: WM_LBUTTONDOWN (D)
+    Set Selection (1) - Text: 2439a40 - L: 74 - C: 12
+    Text - sz:258:13014 - slFr:86:0:3344 - slTo:86:0:3344 - nlA:0
+    Line Starts: 255:12991 256:13012 257:13013 258:13014
+    Set Selection (2) - sz:258:13014 - slFr:2976 - slTo:2976 - nlA:0
+    Line Starts: 255:12991 256:13012 257:13013 258:13014
+  CMD: WM_LBUTTONUP (D)
+    Extend Selection - Text: 2439a40 - L: 74 - C: 12 (x1)
+    Text - sz:258:13014 - slFr:74:9:2976 - slTo:74:9:2976 - nlA:0
+    Line Starts: 255:12991 256:13012 257:13013 258:13014
+  CMD: WM_CHAR [#13] (D)
+    Keystroke - Text: 2439a40 - ch: 13
+    Text - sz:258:13014 - slFr:2976 - slTo:2976 - nlA:0
+    Line Starts: 255:12991 256:13012 257:13013 258:13014
+    Keystroke (2) - sz:259:13023 - slFr:2985 - slTo:2985 - nlA:0
+    Line Starts: 256:13000 257:13021 258:13022 259:13023
+  CMD: WM_INITMENU (W)
+  CMD: COMMAND_REDO
+    Undo (1) - Text: 2439a40 - Undo: 0
+    Text - sz:259:13023 - slFr:75:8:2985 - slTo:75:8:2985 - nlA:0
+    Line Starts: 256:13000 257:13021 258:13022 259:13023
+    Undo (2) - Undo size: 13014 - Repl from: 0 - Repl to: 13014
+    Delete Selection (1) - Text: 2439a40
+    Text - sz:259:13023 - slFr:75:8:0 - slTo:75:8:13014 - nlA:0
+    Line Starts: 256:13000 257:13021 258:13022 259:13023
+    Delete Selection (2) - From line: 75 - From col: 8 - To line: 75 - To col: 8
+    Delete Selection (3) - sz:3:9 - slFr:0 - slTo:0 - nlA:0
+    Line Starts: 0:0 1:7 2:8 3:9
+    Insert Text (1) - Text: 2439a40 - size: 13014 - clean: 1
+    Text - sz:3:9 - slFr:0 - slTo:0 - nlA:0
+    Line Starts: 0:0 1:7 2:8 3:9
+    Insert Text (2) - numNewLines: 258
+    Insert Text (3) - sz:261:13023 - slFr:13014 - slTo:13014 - nlA:0
+    Line Starts: 258:13014 259:13021 260:13022 261:13023
+    Undo (3) - sz:261:13023 - slFr:2976 - slTo:2976 - nlA:0
+    Line Starts: 258:13014 259:13021 260:13022 261:13023
+  CMD: WM_INITMENU (W)
+  CMD: COMMAND_REDO
+    Undo (1) - Text: 2439a40 - Undo: 0
+    Text - sz:261:13023 - slFr:74:9:2976 - slTo:74:9:2976 - nlA:0
+    Line Starts: 258:13014 259:13021 260:13022 261:13023
+    Undo (2) - Undo size: 15 - Repl from: 2976 - Repl to: 2976
+    Insert Text (1) - Text: 2439a40 - size: 15 - clean: 1
+    Text - sz:261:13023 - slFr:74:9:2976 - slTo:74:9:2976 - nlA:0
+    Line Starts: 258:13014 259:13021 260:13022 261:13023
+    Insert Text (2) - numNewLines: 1
+    Insert Text (3) - sz:262:13038 - slFr:2991 - slTo:2991 - nlA:0
+    Line Starts: 259:13029 260:13036 261:13037 262:13038
+    Undo (3) - sz:262:13038 - slFr:2990 - slTo:2990 - nlA:0
+    Line Starts: 259:13029 260:13036 261:13037 262:13038
+  CMD: WM_INITMENU (W)
+  CMD: COMMAND_REDO
+    Undo (1) - Text: 2439a40 - Undo: 0
+    Text - sz:262:13038 - slFr:75:13:2990 - slTo:75:13:2990 - nlA:0
+    Line Starts: 259:13029 260:13036 261:13037 262:13038
+    Undo (2) - Undo size: 18 - Repl from: 2990 - Repl to: 2990
+    Insert Text (1) - Text: 2439a40 - size: 18 - clean: 1
+    Text - sz:262:13038 - slFr:75:13:2990 - slTo:75:13:2990 - nlA:0
+    Line Starts: 259:13029 260:13036 261:13037 262:13038
+    Insert Text (2) - numNewLines: 2
+    Insert Text (3) - sz:264:13056 - slFr:3008 - slTo:3008 - nlA:0
+    Line Starts: 261:13047 262:13054 263:13055 264:13056
+    Undo (3) - sz:264:13056 - slFr:2999 - slTo:2999 - nlA:0
+    Line Starts: 261:13047 262:13054 263:13055 264:13056
+  CMD: WM_INITMENU (W)
+  CMD: COMMAND_REDO
+    Undo (1) - Text: 2439a40 - Undo: 0
+    Text - sz:264:13056 - slFr:76:8:2999 - slTo:76:8:2999 - nlA:0
+    Line Starts: 261:13047 262:13054 263:13055 264:13056
+    Undo (2) - Undo size: 8 - Repl from: 2999 - Repl to: 2999
+    Insert Text (1) - Text: 2439a40 - size: 8 - clean: 1
+    Text - sz:264:13056 - slFr:76:8:2999 - slTo:76:8:2999 - nlA:0
+    Line Starts: 261:13047 262:13054 263:13055 264:13056
+    Insert Text (2) - numNewLines: 0
+    Insert Text (3) - sz:264:13064 - slFr:3007 - slTo:3007 - nlA:0
+    Line Starts: 261:13055 262:13062 263:13063 264:13064
+    Undo (3) - sz:264:13064 - slFr:3007 - slTo:3007 - nlA:0
+    Line Starts: 261:13055 262:13062 263:13063 264:13064
+  CMD: WM_INITMENU (W)
+  CMD: COMMAND_REDO
+    Undo (1) - Text: 2439a40 - Undo: 0
+    Text - sz:264:13064 - slFr:76:16:3007 - slTo:76:16:3007 - nlA:0
+    Line Starts: 261:13055 262:13062 263:13063 264:13064
+    Undo (2) - Undo size: 5 - Repl from: 3007 - Repl to: 3007
+    Insert Text (1) - Text: 2439a40 - size: 5 - clean: 1
+    Text - sz:264:13064 - slFr:76:16:3007 - slTo:76:16:3007 - nlA:0
+    Line Starts: 261:13055 262:13062 263:13063 264:13064
+    Insert Text (2) - numNewLines: 0
+    Insert Text (3) - sz:264:13069 - slFr:3012 - slTo:3012 - nlA:0
+    Line Starts: 261:13060 262:13067 263:13068 264:13069
+    Undo (3) - sz:264:13069 - slFr:3012 - slTo:3012 - nlA:0
+    Line Starts: 261:13060 262:13067 263:13068 264:13069
+  CMD: WM_INITMENU (W)
+
+
+
+The environment has experienced an unexpected internal error.
+
+This error is caused by a bug in the environment and is not your fault!
+Details about the crash have been saved in the file "H:\2017_ICS4_FPROJ\FProj Files with classes\panic.log".
+
+If possible, please e-mail this file to readybugs@hsa.on.ca
+
+Here are some details about the error:
+   Error = LoadString failed (-572662307) (6002)
+   Windows error = The specified resource name cannot be found in the image file. (1814)
+   File = src\edgui.c
+   Line = 1435
+
+All unsaved open files will be saved with a ".sav" or ".sv#" extension.
+
+List of Modules: 
+    C:\Program Files (x86)\Ready to Program\Ready.exe
+    C:\Windows\SYSTEM32\ntdll.dll
+    C:\Windows\System32\KERNEL32.DLL
+    C:\Windows\System32\KERNELBASE.dll
+    C:\Windows\System32\USER32.dll
+    C:\Windows\System32\win32u.dll
+    C:\Windows\System32\GDI32.dll
+    C:\Windows\System32\gdi32full.dll
+    C:\Windows\System32\comdlg32.dll
+    C:\Windows\System32\msvcrt.dll
+    C:\Windows\System32\combase.dll
+    C:\Windows\System32\ucrtbase.dll
+    C:\Windows\System32\RPCRT4.dll
+    C:\Windows\System32\SspiCli.dll
+    C:\Windows\System32\CRYPTBASE.dll
+    C:\Windows\System32\bcryptPrimitives.dll
+    C:\Windows\System32\sechost.dll
+    C:\Windows\System32\shcore.dll
+    C:\Windows\System32\SHLWAPI.dll
+    C:\Windows\System32\SHELL32.dll
+    C:\Windows\System32\cfgmgr32.dll
+    C:\Windows\WinSxS\x86_microsoft.windows.common-controls_6595b64144ccf1df_5.82.14393.447_none_5507ded2cb4f7f4c\COMCTL32.dll
+    C:\Windows\System32\ADVAPI32.dll
+    C:\Windows\System32\windows.storage.dll
+    C:\Windows\System32\powrprof.dll
+    C:\Windows\System32\kernel.appcore.dll
+    C:\Windows\System32\profapi.dll
+    C:\Windows\SYSTEM32\WINMM.dll
+    C:\Windows\SYSTEM32\VERSION.dll
+    C:\Windows\SYSTEM32\WINMMBASE.dll
+    C:\Windows\System32\IMM32.DLL
+    C:\Windows\system32\uxtheme.dll
+    C:\Windows\System32\MSCTF.dll
+    C:\Windows\System32\OLEAUT32.dll
+    C:\Windows\System32\msvcp_win.dll
+    C:\Program Files (x86)\Ready to Program\Support\Bin\edjdll.dll
+    C:\Program Files (x86)\Ready to Program\Support\jre142_01\bin\client\jvm.dll
+    C:\Windows\system32\apphelp.dll
+    C:\Program Files (x86)\Ready to Program\Support\jre142_01\bin\hpi.dll
+    C:\Program Files (x86)\Ready to Program\Support\jre142_01\bin\verify.dll
+    C:\Program Files (x86)\Ready to Program\Support\jre142_01\bin\java.dll
+    C:\Program Files (x86)\Ready to Program\Support\jre142_01\bin\zip.dll
+    C:\Windows\system32\dwmapi.dll
+    C:\Windows\WinSxS\x86_microsoft.windows.common-controls_6595b64144ccf1df_6.0.14393.953_none_89c2555adb023171\comctl32.DLL
+    C:\Program Files (x86)\Ready to Program\Support\jre142_01\bin\dt_shmem.dll
+    C:\Program Files (x86)\Ready to Program\Support\jre142_01\bin\net.dll
+    C:\Windows\System32\WS2_32.dll
+    C:\Windows\system32\napinsp.dll
+    C:\Windows\system32\pnrpnsp.dll
+    C:\Windows\system32\NLAapi.dll
+    C:\Windows\System32\mswsock.dll
+    C:\Windows\SYSTEM32\DNSAPI.dll
+    C:\Windows\System32\NSI.dll
+    C:\Windows\SYSTEM32\IPHLPAPI.DLL
+    C:\Windows\System32\winrnr.dll
+    C:\Windows\System32\wshbth.dll
+    C:\Windows\System32\fwpuclnt.dll
+    C:\Windows\SYSTEM32\bcrypt.dll
+    C:\Windows\System32\rasadhlp.dll
+    C:\Windows\SYSTEM32\dbghelp.dll
+
+  0 .V PC=0023:77e1e5fc Ret=75e8ae72 Frame=0019b328 Stack=0019b2b8
+    Parameters (0x00000970 0x00003a98 0x00000000 0x0019dbe4)
+    Unknown module, ZwWaitForSingleObject() + 0012 byte(s)
+  1 .V PC=0023:75e8ae72 Ret=004162f5 Frame=0019b33c Stack=0019b330
+    Parameters (0x00000970 0x00003a98 0x0019e414 0x0019dc24)
+    Unknown module, WaitForSingleObject() + 0018 byte(s)
+  2 .V PC=0023:004162f5 Ret=00415768 Frame=0019dbe4 Stack=0019b344
+    Parameters (0x00000001 0x00001772 0x00591168 0x0000059b)
+    src\edfail.c, MyFailErrorBox (), Line 0987+0020 byte(s)
+  3 .V PC=0023:00415768 Ret=0041c125 Frame=0019dc0c Stack=0019dbec
+    Parameters (0x00001772 0x00591168 0x0000059b 0x00000716)
+    src\edfail.c, EdFail_Fatal (), Line 0494+0027 byte(s)
+  4 .V PC=0023:0041c125 Ret=0044ab72 Frame=0019dc30 Stack=0019dc14
+    Parameters (0xdddddddd 0x0019e3bc 0x00000050 0x00000000)
+    src\edgui.c, EdGUI_LoadString (), Line 1436+0040 byte(s)
+  5 .V PC=0023:0044ab72 Ret=00448a0e Frame=0019e414 Stack=0019dc38
+    Parameters (0x00090336 0x001603d1 0x001603d1 0x00000116)
+    src\edwin.c, MyMenusAdjust (), Line 2636+0018 byte(s)
+  6 .V PC=0023:00448a0e Ret=7799d2b3 Frame=0019e444 Stack=0019e41c
+    Parameters (0x00090336 0x00000116 0x001603d1 0x00000000)
+    src\edwin.c, MyEditorWindowProcedure (), Line 1503+0013 byte(s)
+  7 .V PC=0023:7799d2b3 Ret=7797e88a Frame=0019e470 Stack=0019e44c
+    Parameters (0x00448681 0x00090336 0x00000116 0x001603d1)
+    Unknown module, SetManipulationInputTarget() + 0083 byte(s)
+  8 .V PC=0023:7797e88a Ret=7797e4c0 Frame=0019e558 Stack=0019e478
+    Parameters (0x00448681 0x00000000 0x00000116 0x001603d1)
+    Unknown module, DispatchMessageW() + 2298 byte(s)
+  9 .V PC=0023:7797e4c0 Ret=77988b09 Frame=0019e5b8 Stack=0019e560
+    Parameters (0x01020800 0x00000000 0x00000116 0x001603d1)
+    Unknown module, DispatchMessageW() + 1328 byte(s)
+ 10 .V PC=0023:77988b09 Ret=77e208c6 Frame=0019e5f8 Stack=0019e5c0
+    Parameters (0x0019e614 0x00000020 0x0019ff70 0x77e20810)
+    Unknown module, MsgWaitForMultipleObjectsEx() + 0777 byte(s)
+ 11 .V PC=0023:77e208c6 Ret=004031d4 Frame=0019e650 Stack=0019e600
+    Parameters (0x00090336 0x004202b7 0x0019e678 0x0019e674)
+    Unknown module, KiUserCallbackDispatcher() + 0054 byte(s)
+ 12 .V PC=0023:004031d4 Ret=00403190 Frame=0019e668 Stack=0019e658
+    Parameters (0x0019e678 0x0019e6a0 0x00030344 0x00000100)
+    src\ed.c, MyProcessMessage (), Line 1842+0041 byte(s)
+ 13 .V PC=0023:00403190 Ret=0040170f Frame=0019e698 Stack=0019e670
+    Parameters (0x0052cb00 0x0052cb00 0xcccccccc 0xcccccccc)
+    src\ed.c, MyProcessEvents (), Line 1818+0009 byte(s)
+ 14 .V PC=0023:0040170f Ret=0052cc26 Frame=0019fef0 Stack=0019e6a0
+    Parameters (0x00400000 0x00000000 0x00983184 0x00000001)
+    src\ed.c, WinMain (), Line 0470+0005 byte(s)
+ 15 .V PC=0023:0052cc26 Ret=75a662c4 Frame=0019ff80 Stack=0019fef8
+    Parameters (0x002d3000 0x75a662a0 0x36cd00fa 0x0019ffdc)
+    crt0.c, WinMainCRTStartup (), Line 0198+0054 byte(s)
+ 16 .V PC=0023:75a662c4 Ret=77e10fd9 Frame=0019ff94 Stack=0019ff88
+    Parameters (0x002d3000 0x50c07f34 0x00000000 0x00000000)
+    Unknown module, BaseThreadInitThunk() + 0036 byte(s)
+ 17 .V PC=0023:77e10fd9 Ret=77e10fa4 Frame=0019ffdc Stack=0019ff9c
+    Parameters (0xffffffff 0x77e32ed3 0x00000000 0x00000000)
+    Unknown module, RtlSubscribeWnfStateChangeNotification() + 1081 byte(s)
+ 18 .V PC=0023:77e10fa4 Ret=00000000 Frame=0019ffec Stack=0019ffe4
+    Parameters (0x0052cb00 0x002d3000 0x00000000 0x78746341)
+    Unknown module, RtlSubscribeWnfStateChangeNotification() + 1028 byte(s)
+
+
+------------------------------------------------------

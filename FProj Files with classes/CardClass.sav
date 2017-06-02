@@ -73,9 +73,8 @@ public class CardClass extends ShapeClass                                       
 	{
 	    cardSize = newCardSize;
 	}
-	else                                                                                        // Just set the card size to 1.
-	{
-	    cardSize = 1;
+	else{
+	cardSize = 1;
 	}
     }
 
@@ -92,10 +91,6 @@ public class CardClass extends ShapeClass                                       
 	{
 	    cardValue = newCardValue;
 	}
-	else                                                                                        // Just set the card value to 1.
-	{
-	    cardValue = 1;
-	}
     }
 
 
@@ -110,10 +105,6 @@ public class CardClass extends ShapeClass                                       
 	if (newCardSuit >= 1 && newCardSuit <= 4)                                                   // This validates the data to see if I am allowed to changed the suit value of the card.
 	{
 	    cardSuit = newCardSuit;
-	}
-	else                                                                                        // Just set the card suit to 1.
-	{
-	    cardSuit = 1;
 	}
     }
 
@@ -171,13 +162,21 @@ public class CardClass extends ShapeClass                                       
 
     public int resizeText ()                                                                        // This is a method to return the value of the text of the card value.
     {
-	if (cardSize == 1 || cardSize == 2)                                                         // If the value of the variable cardSize is 1 or 2 , then return 15.
+	if (cardSize == 1)                                                                          // If the value of the variable cardSize is 1, then return 15.
 	{
 	    return 15;
 	}
-	else if (cardSize == 3 || cardSize == 4)                                                    // If the value of the variable cardSize is 3 or 4, then return 20.
+	else if (cardSize == 2)                                                                     // If the value of the variable cardSize is 2, then return 20.
 	{
 	    return 20;
+	}
+	else if (cardSize == 3)                                                                     // If the value of the variable cardSize is 3, then return 25.
+	{
+	    return 25;
+	}
+	else if (cardSize == 4)                                                                     // If the value of the variable cardSize is 4, then return 30.
+	{
+	    return 30;
 	}
 	else                                                                                        // Just return 15.
 	{
@@ -190,8 +189,12 @@ public class CardClass extends ShapeClass                                       
     {
 	Font f1 = new Font ("SanSerif", Font.PLAIN, resizeText ());                                 // Instansiate the Font Class and
 	c.setFont (f1);                                                                             // Set the font.
-	int xPosOfText = (int) (getCentreX () - (getWidth () / 2) + 2);                             // Create the positions of the text of the card value.
-	int yPosOfText = (int) (getCentreY () - (getHeight () / 2) + 15);                           //
+	int constantXDistance = 2;                                                                  // Create a constant value.
+	int constantYDistance = 15;                                                                 //
+	int xPosOfText = (int) (getCentreX () - (getWidth () / 2) + constantXDistance);             // Create the positions of the text of the card value.
+	int yPosOfText = (int) (getCentreY () - (getHeight () / 2) + constantYDistance);            //
+	//xPosOfText = getCentreX () - (getWidth () / 2);
+	//yPosOfText = getCentreY () - (getHeight () / 2);
 	c.drawString (Integer.toString (cardValue), xPosOfText, yPosOfText);
     }
 
@@ -254,5 +257,8 @@ public class CardClass extends ShapeClass                                       
     {
     }
 } // CardClass class
+
+
+ class
 
 
