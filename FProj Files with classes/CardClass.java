@@ -123,37 +123,66 @@ public class CardClass extends ShapeClass                                       
 
     public void drawCard (Console c)                                                                // This is a "draw" method to draw a card, either the outline of the card.
     {
+	resizeCard ();
+
 	int x1 = getCentreX () - (getWidth () / 2);                                                 // Create the x and y points to calculate the corners of the card.
 	int y1 = getCentreY () - (getHeight () / 2);
-	int x2 = getCentreX () + (getWidth () / 2);
-	int y2 = getCentreY () + (getHeight () / 2);
 
 	c.setColour (getColour ());                                                                 // Set the colour of the card by "getting" the colour from its super class.
 
 	if (cardSuit >= 1 && cardSuit <= 4)                                                         // If the suit value of the card is between 1 and 4 (inclusive), then draw a rectangle by using the declared variables above, and set the card to be faced up.
 	{
 	    faceUp = true;
-	    c.drawRect (x1, y1, x2, y2);
+	    c.drawRect (x1, y1, getWidth (), getHeight ());
 	}
 	else if (cardSuit == 0)                                                                     // If the suit value of the card is 0, then draw a filled rectangle by using the declared variables above, and set the card to be faced down.
 	{
 	    faceUp = false;
-	    c.fillRect (x1, y1, x2, y2);
+	    c.fillRect (x1, y1, getWidth (), getHeight ());
 	}
+    }
+
+
+    public int resizeText ()                                                                        // This is a method to return the value of the text of the card value.
+    {
+	if (cardSize == 1)                                                                          // If the value of the variable cardSize is 1, then return 15.
+	{
+	    return 15;
+	}
+	else if (cardSize == 2)                                                                     // If the value of the variable cardSize is 2, then return 20.
+	{
+	    return 20;
+	}
+	else if (cardSize == 3)                                                                     // If the value of the variable cardSize is 3, then return 25.
+	{
+	    return 25;
+	}
+	else if (cardSize == 4)                                                                     // If the value of the variable cardSize is 4, then return 30.
+	{
+	    return 30;
+	}
+	else                                                                                        // Just return 15.
+	{
+	    return 15;
+	}
+    }
+
+
+    public void drawText (Console c)                                                                // This is a method to draw the text of the card value.
+    {
+	Font f1 = new Font ("SanSerif", Font.PLAIN, resizeText ());                                 // Instansiate the Font Class and
+	c.setFont (f1);                                                                             // Set the font.
+	double constantDistance = 0.9;                                                              // Create a constant value.
+	int xPosOfText = (int) (getCentreX ());                                                     // Create the positions of the text of the card value.
+	int yPosOfText = (int) (getCentreY ());                                                     //
+	c.drawString (Integer.toString (cardValue), xPosOfText, yPosOfText);
     }
 
 
     public void draw (Console c)                                                                    // This is a "draw" method to draw the entire card which contains the outline, value, and suit of the card.
     {
-	resizeCard ();                                                                              // Change the height and width of the card.
 	drawCard (c);                                                                               // Draw the outline of the card.
-
-	Font f1 = new Font ("SanSerif", Font.PLAIN, 25);                                            // Instansiate the Font Class and
-	c.setFont (f1);                                                                             // Set the font.
-	final constantSpacing = 0.9;                                                                // Create a constant value.
-	int xPosOfText = (int) (getCentreX () - (getWidth () * 0.9));                               // Create the positions of the text of the card value.
-	int yPosOfText = (int) (getCentreY () - (getHeight () * 0.9));                              //
-	c.drawString (Integer.toString (cardValue), xPosOfText, yPosOfText);                        // Draw the text of the card value.
+	drawText (c);
 
 	if (faceUp == true)                                                                         // If the card is faced up, then draw a faced up card.
 	{
