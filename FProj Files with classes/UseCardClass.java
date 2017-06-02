@@ -12,11 +12,11 @@ public class UseCardClass
 	DelayClass delay = new DelayClass ();
 
 	CardClass cardObject = new CardClass (true);
-	cardObject.draw (c);
-	cardObject.setCentre (100, 250);
-	cardObject.draw (c);
+	//cardObject.draw (c);
 	cardObject.setCentre (300, 250);
 	cardObject.draw (c);
+	//cardObject.setCentre (300, 250);
+	//cardObject.draw (c);
 	//c.println (cardObject.getCentreX ());
 	//c.println (cardObject.getCentreY ());
 	//c.println (cardObject.getHeight ());
