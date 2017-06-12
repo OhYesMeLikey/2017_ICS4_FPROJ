@@ -124,6 +124,10 @@ public abstract class ShapeClass                                                
 
     public void erase (Graphics g)                                                              // This is an overloaded erase method.
     {
+	Color cOldColor = getColour ();                                                         // Create a temporary variable to store the current colour which is used to recover back the colour.
+	setColour (Color.white);                                                                // Set the current colour to white.
+	draw (g);                                                                               // Draw the object.
+	setColour (cOldColor);                                                                  // Revert the current colour to the original colour.
     }
 
 
