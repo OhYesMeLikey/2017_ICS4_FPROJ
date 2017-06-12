@@ -14,6 +14,8 @@ public class GolfSolitaire extends Applet implements ActionListener, MouseListen
 
     private boolean drawFlag = true;
 
+    private boolean firstMove = true;
+
     Graphics g;
     Console c;
 
@@ -72,17 +74,24 @@ public class GolfSolitaire extends Applet implements ActionListener, MouseListen
 	    }
 	}
 
-	// Move the remaining cards into the "stock" deck.
-	// Set the centre of the "stock" deck.
+	/* As long as the main deck is not empty, move the remaining cards from the main deck into the "stock" deck,
+	// and set the centre of the "stock" deck.*/
 	while (!deckArray [0].isEmpty ())
 	{
 	    deckArray [8].addCard (0, deckArray [0].deal ());
 	    deckArray [8].cardAt (0).setCentre (deckArray [8].getCentreX (), deckArray [8].getCentreY ());
 	}
+
+
+	// Redraw the game.
 	repaint ();
     }
 
 
+    /* Draw all the required decks for the game.
+    // All the 7 "piles", "stock", and "foundation" decks are drawn to the screen.
+    // If that deck isn't empty, then draw the deck that correlates to the index 'i',
+    // and draw the certain amount of cards that correlates to the index 'j'*/
     public void paint (Graphics g)
     {
 	for (int i = 1 ; i < 10 ; i++)
@@ -120,23 +129,25 @@ public class GolfSolitaire extends Applet implements ActionListener, MouseListen
     // deck. */
     public void mouseReleased (MouseEvent e)
     {
-	if (deckArray [9].isPointInside (e.getX (), e.getY ()))
-	{
-	    if (deckArray [9].isEmpty ())
+	/*
+	    if (deckArray [9].isPointInside (e.getX (), e.getY ()))
 	    {
-		deckArray [9].addCard (deckArray [0].deal ());
+		if (deckArray [9].isEmpty ())
+		{
+		    deckArray [9].addCard (deckArray [0].deal ());
+		}
+		else if (Math.abs (deckArray [0].cardAt (0).getCardRankValue () - deckArray [9].cardAt (0).getCardRankValue ()) == 1)
+		{
+		    deckArray [9].addCard (deckArray [0].deal ());
+		}
+		else
+		{
+		    deckArray [0].cardAt (0).setCentre (deckArray [0].cardAt (0).getPreviousX (), deckArray [0].cardAt (0).getPreviousY ());
+		    deckArray [deckArray [0].cardAt (0).getPreviousDeckValue ()].addCard (deckArray [0].deal ());
+		}
+		System.out.println ("yes release");
 	    }
-	    else if (Math.abs (deckArray [0].cardAt (0).getCardRankValue () - deckArray [9].cardAt (0).getCardRankValue ()) == 1)
-	    {
-		deckArray [9].addCard (deckArray [0].deal ());
-	    }
-	    else
-	    {
-		deckArray [0].cardAt (0).setCentre (deckArray [0].cardAt (0).getPreviousX (), deckArray [0].cardAt (0).getPreviousY ());
-		deckArray [deckArray [0].cardAt (0).getPreviousDeckValue ()].addCard (deckArray [0].deal ());
-	    }
-	    System.out.println ("yes release");
-	}
+	    */
     }
 
 
@@ -146,44 +157,83 @@ public class GolfSolitaire extends Applet implements ActionListener, MouseListen
 	// Else set the centre of the card to the centre of the mouse. */
     public void mousePressed (MouseEvent e)
     {
-	if (deckArray [0].isEmpty ())
-	{
-	    for (int i = 1 ; i < 8 ; i++)
+	/*
+	    if (deckArray [0].isEmpty ())
 	    {
-		if (!deckArray [i].isEmpty ())
+		for (int i = 1 ; i < 8 ; i++)
 		{
-		    if (deckArray [i].cardAt (deckArray [i].cardsRemaining () - 1).isPointInside (e.getX (), e.getY ()))
+		    if (!deckArray [i].isEmpty ())
 		    {
-			deckArray [0].addCard (deckArray [i].deal ());
-			deckArray [0].cardAt (0).setPrevious (e.getX (), e.getY (), i);
-			break;
+			if (deckArray [i].cardAt (deckArray [i].cardsRemaining () - 1).isPointInside (e.getX (), e.getY ()))
+			{
+			    deckArray [0].addCard (deckArray [i].deal ());
+			    deckArray [0].cardAt (0).setPrevious (e.getX (), e.getY (), i);
+			    break;
+			}
 		    }
 		}
 	    }
-	}
-	else
-	{
-	    drawFlag = false;
-	    repaint ();
-	    deckArray [0].cardAt (0).setCentre (e.getX (), e.getY ());
-	    drawFlag = true;
-	    repaint ();
-	}
+	    else
+	    {
+		drawFlag = false;
+		repaint ();
+		deckArray [0].cardAt (0).setCentre (e.getX (), e.getY ());
+		drawFlag = true;
+		repaint ();
+	    }
+	    */
     }
 
 
     public void mouseDragged (MouseEvent e)
     {
-	if (!deckArray [0].isEmpty ())
-	{
-	    deckArray [0].setCentre (e.getX (), e.getY ());
-	}
+	/*
+	    if (!deckArray [0].isEmpty ())
+	    {
+		deckArray [0].setCentre (e.getX (), e.getY ());
+	    }
+	    */
     }
 
 
+    /*
+      */
     public void mouseClicked (MouseEvent e)
     {
+	for (int i = 1 ; i < 9 ; i++)
+	{
+	    if (firstMove)
+	    {
+		deckArray [9].addCard (deckArray [i].deal ());
+		firstMove = false;
+		break;
+	    }
+	    else if (i == 8)
+	    {
+		deckArray [9].cardAt (deckArray [i].cardsRemaining () - 1).setCentre (deckArray [9].getCentreX (), deckArray [9].getCentreY ());
+		deckArray [9].addCard (deckArray [i].deal ());
+		break;
+	    }
+	    else if (i >= 1 && i <= 7)
+	    {
+		if (!deckArray [i].isEmpty () && !firstMove)
+		{
+		    if (deckArray [i].cardAt (deckArray [i].cardsRemaining () - 1).isPointInside (e.getX (), e.getY ()))
+		    {
+			int pileValue = deckArray [i].cardAt (deckArray [i].cardsRemaining () - 1).getCardRankValue ();
+			int foundationValue = deckArray [9].cardAt (deckArray [i].cardsRemaining () - 1).getCardRankValue ();
 
+			if (Math.abs (pileValue - foundationValue) == 1)
+			{
+			    deckArray [9].cardAt (deckArray [i].cardsRemaining () - 1).setCentre (deckArray [9].getCentreX (), deckArray [9].getCentreY ());
+			    deckArray [9].addCard (deckArray [i].deal ());
+			    break;
+			}
+		    }
+		}
+	    }
+	    repaint ();
+	}
     }
 
 
