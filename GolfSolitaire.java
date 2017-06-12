@@ -196,8 +196,10 @@ public class GolfSolitaire extends Applet implements ActionListener, MouseListen
     }
 
 
-    /*
-      */
+    /* Move a valid card into the foundation's deck
+    // Do the following checks for 8 times
+    // On the first click, any card from any clicked deck will be moved into the foundation's deck.
+    //   */
     public void mouseClicked (MouseEvent e)
     {
 	for (int i = 1 ; i < 9 ; i++)
