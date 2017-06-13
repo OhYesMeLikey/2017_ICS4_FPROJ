@@ -26,10 +26,8 @@ public class DeckClass extends ShapeClass                   // This is a Deck cl
 	    {
 		for (int rankValue = 1 ; rankValue < 14 ; rankValue++)
 		{
-		    //System.out.println (deck.size ());
 		    CardClass card = new CardClass (1, 1, rankValue, suitValue);
-		    addCard (0, card);
-		    //System.out.println (deck.size ());
+		    addCard (card);
 		}
 	    }
 	}
