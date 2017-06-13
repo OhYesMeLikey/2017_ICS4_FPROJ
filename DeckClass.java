@@ -5,7 +5,7 @@ import java.util.*;                                         // Vector class is i
 
 public class DeckClass extends ShapeClass                   // This is a Deck class.
 {
-    private Vector deck;                                    // Instansiate a vector with a size of 0 and grows by 1.
+    private Vector deck;                                    // Instansiate a vector.
 
 
     public DeckClass ()                                     // This is the default constructor which initilizes the encapsulated data with default values;
@@ -18,10 +18,11 @@ public class DeckClass extends ShapeClass                   // This is a Deck cl
     public DeckClass (char deckType)                        // This is an overloaded constructor.
     {
 	super ();
-	deck = new Vector (0, 1);
 
 	if (deckType == 's')                                // If the type of deck is a standard deck of 52 cards, then add 52 cards to the deck.
 	{
+	    deck = new Vector (0, 1);
+
 	    for (int suitValue = 1 ; suitValue < 5 ; suitValue++)
 	    {
 		for (int rankValue = 1 ; rankValue < 14 ; rankValue++)
@@ -31,6 +32,19 @@ public class DeckClass extends ShapeClass                   // This is a Deck cl
 		}
 	    }
 	}
+	else if (deckType == 'p')
+	{
+	    deck = new Vector (5, 0);
+
+	    for (int i = 0 ; i < 5 ; i++)
+	    {
+		int randomRankValue = Math.random () * 14;
+		int randomSuitValue = Math.random () * 4;
+		CardClass card = new CardClass (1, 1, randomRankValue, randomSuitValue);
+		addCard (card);
+	    }
+	}
+
 	shuffleDeck ();
     }
 
@@ -152,4 +166,5 @@ public class DeckClass extends ShapeClass                   // This is a Deck cl
 	}
     }
 } // DeckClass class
+
 

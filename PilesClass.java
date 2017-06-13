@@ -8,18 +8,18 @@ public class PilesClass extends DeckClass
 
     public PilesClass ()
     {
-	super ();
+	super ('s');
 	sizeInterval = 20;
     }
 
 
-    public PilesClass (char s, int newCX, int newCY)
+    public PilesClass (char typeOfPile, int newCX, int newCY)
     {
 
-	super (s);
+	super ('s');
 	sizeInterval = 20;
 
-	if (s == 's')
+	if (typeOfPile == 's')
 	{
 	    setCentre (newCX, newCY);
 
