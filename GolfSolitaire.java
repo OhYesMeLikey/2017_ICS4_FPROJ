@@ -5,19 +5,13 @@ import java.awt.event.*;
 import hsa.Console;
 public class GolfSolitaire extends Applet implements ActionListener, MouseListener, MouseMotionListener
 {
-    /* Initialize 10 decks.
-    // Index 0 is the main deck.
-    // From index 1 - 7 are the piles deck.
-    // Index 8 is stock deck.
-    // Index 9 is foundations deck; this should be empty. */
+    // Initializing an array of decks.
     DeckClass[] deckArray;
 
     private boolean drawFlag = true;
-
     private boolean firstMove = true;
 
     Graphics g;
-    Console c;
 
     public void init ()
     {
@@ -37,7 +31,7 @@ public class GolfSolitaire extends Applet implements ActionListener, MouseListen
     public void initializeAllDecks ()
     {
 	// Deck 0 is the entire deck.
-	deckArray [0] = new DeckClass ('s');
+	deckArray [0] = new DeckClass ("standard");
 
 	// Initialize rest of the 9 decks to be empty.
 	for (int i = 1 ; i < 10 ; i++)
@@ -97,7 +91,7 @@ public class GolfSolitaire extends Applet implements ActionListener, MouseListen
 	{
 	    if (!deckArray [i].isEmpty ())
 	    {
-		for (int j = deckArray [i].cardsRemaining () - 1 ; j > -1 ; j--)
+		for (int j = deckArray [i].deckSize () - 1 ; j > -1 ; j--)
 		{
 		    if (drawFlag)
 		    {
@@ -163,7 +157,7 @@ public class GolfSolitaire extends Applet implements ActionListener, MouseListen
 		{
 		    if (!deckArray [i].isEmpty ())
 		    {
-			if (deckArray [i].cardAt (deckArray [i].cardsRemaining () - 1).isPointInside (e.getX (), e.getY ()))
+			if (deckArray [i].cardAt (deckArray [i].deckSize () - 1).isPointInside (e.getX (), e.getY ()))
 			{
 			    deckArray [0].addCard (deckArray [i].deal ());
 			    deckArray [0].cardAt (0).setPrevious (e.getX (), e.getY (), i);
@@ -215,7 +209,7 @@ public class GolfSolitaire extends Applet implements ActionListener, MouseListen
 		}
 		else if (i == 8)
 		{
-		    //deckArray [9].cardAt (deckArray [i].cardsRemaining () - 1).setCentre (deckArray [9].getCentreX (), deckArray [9].getCentreY ());
+		    //deckArray [9].cardAt (deckArray [i].deckSize () - 1).setCentre (deckArray [9].getCentreX (), deckArray [9].getCentreY ());
 		    deckArray [9].addCard (deckArray [i].deal ());
 		    System.out.println ("Stock deck");
 		    break;
@@ -226,14 +220,14 @@ public class GolfSolitaire extends Applet implements ActionListener, MouseListen
 		    {
 			if (!deckArray [i].isEmpty () && !firstMove)
 			{
-			    if (deckArray [i].cardAt (deckArray [i].cardsRemaining () - 1).isPointInside (e.getX (), e.getY ()))
+			    if (deckArray [i].cardAt (deckArray [i].deckSize () - 1).isPointInside (e.getX (), e.getY ()))
 			    {
-				int pileValue = deckArray [i].cardAt (deckArray [i].cardsRemaining () - 1).getCardRankValue ();
-				int foundationValue = deckArray [9].cardAt (deckArray [i].cardsRemaining () - 1).getCardRankValue ();
+				int pileValue = deckArray [i].cardAt (deckArray [i].deckSize () - 1).getCardRankValue ();
+				int foundationValue = deckArray [9].cardAt (deckArray [i].deckSize () - 1).getCardRankValue ();
 
 				if (Math.abs (pileValue - foundationValue) == 1)
 				{
-				    deckArray [9].cardAt (deckArray [i].cardsRemaining () - 1).setCentre (deckArray [9].getCentreX (), deckArray [9].getCentreY ());
+				    deckArray [9].cardAt (deckArray [i].deckSize () - 1).setCentre (deckArray [9].getCentreX (), deckArray [9].getCentreY ());
 				    deckArray [9].addCard (deckArray [i].deal ());
 				    System.out.println ("Pile " + i);
 				    break;
@@ -253,9 +247,9 @@ public class GolfSolitaire extends Applet implements ActionListener, MouseListen
 	{
 	    for (int i = 1 ; i < 9 ; i++)
 	    {
-		//deckArray [9].cardAt (deckArray [i].cardsRemaining () - 1).setCentre (deckArray [9].getCentreX (), deckArray [9].getCentreY ());
+		//deckArray [9].cardAt (deckArray [i].deckSize () - 1).setCentre (deckArray [9].getCentreX (), deckArray [9].getCentreY ());
 		deckArray [9].addCard (deckArray [i].deal ());
-		deckArray [i].deleteCard (deckArray [i].cardsRemaining ());
+		deckArray [i].deleteCard (deckArray [i].deckSize ());
 		break;
 	    }
 	    repaint ();

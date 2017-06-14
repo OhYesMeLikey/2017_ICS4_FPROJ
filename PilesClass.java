@@ -13,18 +13,27 @@ public class PilesClass extends DeckClass
     }
 
 
-    public PilesClass (char typeOfPile, int newCX, int newCY)
+    public PilesClass (char typeOfPile)
+    {
+	if (typeOfPile == 'p')
+	{
+	    super ('p');
+	    sizeInterval = 20;
+	}
+    }
+
+
+    public void draw (Console c)
     {
 
-	super ('s');
-	sizeInterval = 20;
+    }
 
-	if (typeOfPile == 's')
+
+    public void draw (Graphics g)
+    {
+	for (int i = 0 ; i < 5 ; i++)
 	{
-	    setCentre (newCX, newCY);
-
-
+	    cardAt [i].draw (g);
 	}
-
     }
 } // PilesClass class

@@ -1,106 +1,138 @@
 // The "DeckClass" class.
 import java.awt.*;
 import hsa.Console;
-import java.util.*;                                         // Vector class is in the 'util'  package
+import java.util.*;
 
-public class DeckClass extends ShapeClass                   // This is a Deck class.
+public class DeckClass extends ShapeClass
 {
-    private Vector deck;                                    // Instansiate a vector.
+    // Initialize a vector.
+    private Vector deck;
 
-
-    public DeckClass ()                                     // This is the default constructor which initilizes the encapsulated data with default values;
+    // Default constructor
+    public DeckClass ()
     {
+	// Initialize encapsulated data with default values.
 	super ();
+
+	// Instansiate the deck with a size of 0 and increment the size by 1.
 	deck = new Vector (0, 1);
     }
 
 
-    public DeckClass (char deckType)                        // This is an overloaded constructor.
+    // Overloaded constructor
+    public DeckClass (String deckType)
     {
+	// Initialize encapsulated data with default values.
 	super ();
 
-	if (deckType == 's')                                // If the type of deck is a standard deck of 52 cards, then add 52 cards to the deck.
+	// Create a standard deck of 52 cards.
+	if (deckType.equals ("standard"))
 	{
-	    deck = new Vector (0, 1);
+	    // Instansiate the deck with a size of 52 and does not increment.
+	    deck = new Vector (52, 0);
 
+	    // Assign the suit values for the cards.
 	    for (int suitValue = 1 ; suitValue < 5 ; suitValue++)
 	    {
+		// Assign the rank values for the cards.
 		for (int rankValue = 1 ; rankValue < 14 ; rankValue++)
 		{
+		    // Instansiate a card object by assigning it from the given rank and suit values.
 		    CardClass card = new CardClass (1, 1, rankValue, suitValue);
 		    addCard (card);
 		}
 	    }
 	}
-	else if (deckType == 'p')
+	// Create a deck of 5 random cards.
+	else if (deckType.equals ("piles"))
 	{
+	    // Instansiate the deck with a size of 5 and does not increment.
 	    deck = new Vector (5, 0);
 
+	    // Create 5 random cards by assigning the card with random rank and suit values.
 	    for (int i = 0 ; i < 5 ; i++)
 	    {
-		int randomRankValue = Math.random () * 14;
-		int randomSuitValue = Math.random () * 4;
+		int randomRankValue = (int) (Math.random () * 14);
+		int randomSuitValue = (int) (Math.random () * 4);
 		CardClass card = new CardClass (1, 1, randomRankValue, randomSuitValue);
 		addCard (card);
 	    }
 	}
+	// Create a deck of 17 random cards.
+	else if (deckType.equals ("stock"))
+	{
+	    // Instansiate the deck with a size of 17 and does not increment.
+	    deck = new Vector (17, 0);
 
+	    // Create 17 random cards by assigning the card with random rank and suit values.
+	    for (int i = 0 ; i < 17 ; i++)
+	    {
+		int randomRankValue = (int) (Math.random () * 14);
+		int randomSuitValue = (int) (Math.random () * 4);
+		CardClass card = new CardClass (0, 1, randomRankValue, randomSuitValue);
+		addCard (card);
+	    }
+	}
 	shuffleDeck ();
     }
 
 
+    // Checks if the deck is empty.
     public boolean isEmpty ()
     {
 	return deck.isEmpty ();
     }
 
 
-    public int cardsRemaining ()
+    // Returns the size of the deck.
+    public int deckSize ()
     {
 	return deck.size ();
     }
 
 
-    public void addCard (int givenPos, CardClass aCardToAdd)      // This is a method to add a card.
+    // Add a card to the deck from the given position and a card.
+    public void addCard (int givenPos, CardClass aCardToAdd)
     {
 	deck.add (givenPos, aCardToAdd);
     }
 
 
-    public void addCard (CardClass aCardToAdd)       // This is a method to add a card.
+    // Add a card to the end of the deck.
+    public void addCard (CardClass aCardToAdd)
     {
 	deck.add (aCardToAdd);
     }
 
 
-    public void removeCard ()      // This is a method to remove a card.
+    // Remove a card from the beginning of the deck.
+    public void removeCard ()
     {
 	deck.remove (0);
     }
 
 
+    // Remove a card from the deck from the given position.
     public void removeCardFromPos (int pos)
     {
 	deck.remove (pos);
     }
 
 
+    // Returns a card from the end of the deck.
     public CardClass deal ()
     {
-	return (CardClass) (deck.remove (cardsRemaining () - 1));
+	return (CardClass) (deck.remove (deckSize () - 1));
     }
 
 
-    public void deleteCard (int cardPos)
-    {
-	deck.remove (cardPos);
-    }
-
-
+    // Checks to see if the mouse click is inside the deck.
     public boolean isPointInside (int px, int py)
     {
+	// Checks to see if the mouse click x is in range of the width of the deck.
 	if ((px >= getCentreX () - (getWidth () / 2)) && (px <= getCentreX () + (getWidth () / 2)))
 	{
+	    //Checks to see if the mouse click y is in range of the height of the deck.
 	    if ((py >= getCentreY () - (getHeight () / 2)) && (py <= getCentreY () + (getHeight () / 2)))
 	    {
 		return true;
@@ -118,20 +150,22 @@ public class DeckClass extends ShapeClass                   // This is a Deck cl
     }
 
 
-    public void shuffleDeck ()                              // This is a method to shuffle the deck
+    // Shuffle the deck by taking a random card in the deck and putting it on top of the deck.
+    public void shuffleDeck ()
     {
 	for (int shuffleTimes = 0 ; shuffleTimes < deck.size () ; shuffleTimes++)
 	{
-	    deck.add (0, (CardClass) (deck.remove ((int) (Math.random () * deck.size ()))));
+	    deck.add (deck.size () - 1, (CardClass) (deck.remove ((int) (Math.random () * deck.size ()))));
 	}
     }
 
 
+    // Returns a card object from the given position.
     public CardClass cardAt (int pos)
     {
 	if (!isEmpty ())
 	{
-	    if (pos < cardsRemaining () && pos > -1)
+	    if (pos < deckSize () && pos > -1)
 	    {
 		return (CardClass) (deck.elementAt (pos));
 	    }
@@ -147,11 +181,13 @@ public class DeckClass extends ShapeClass                   // This is a Deck cl
     }
 
 
+    // Overloaded draw method.
     public void draw (Console c)
     {
     }
 
 
+    // Draws a deck.
     public void draw (Graphics g)
     {
 	if (isEmpty ())

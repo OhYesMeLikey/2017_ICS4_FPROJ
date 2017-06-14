@@ -2,30 +2,35 @@
 import java.awt.*;
 import hsa.Console;
 
-public class CardClass extends ShapeClass                                                           // CardClass inherits ShapeClass
+// CardClass inherits ShapeClass
+public class CardClass extends ShapeClass
 {
-    private int cardFaceUp;                                                                             // Initialize encapsulated data, with no values, for this class.
-    private int cardSize;                                                                           //
-    private int cardRankValue;                                                                          //
-    private int cardSuit;                                                                           //
+    // Initialize encapsulated data.
+    private int cardFaceUp;
+    private int cardSize;
+    private int cardRankValue;
+    private int cardSuit;
 
     private int previousX;
     private int previousY;
 
     private int previousDeckValue;
 
-    public CardClass ()                                                                             // This is the default constructor that initializes the encapsulated data with values.
+    // Default constructor
+    public CardClass ()
     {
 	cardFaceUp = 1;
 	cardSize = 1;
 	cardRankValue = 1;
 	cardSuit = 1;
+
 	setHeight (60);
 	setWidth ((int) (getHeight () * 0.7));
     }
 
 
-    public CardClass (int newFaceUpOrDown)                                                          // This is another constructor.
+    // Overloaded constructor
+    public CardClass (int newFaceUpOrDown)
     {
 	setCardFaceUpOrDown (newFaceUpOrDown);
 
@@ -38,7 +43,8 @@ public class CardClass extends ShapeClass                                       
     }
 
 
-    public CardClass (int newFaceUpOrDown, int newCardSize, int newCardRankValue, int newCardSuit)      // This is another constructor that sets the encapsulated data with values.
+    // Another overloaded constructor
+    public CardClass (int newFaceUpOrDown, int newCardSize, int newCardRankValue, int newCardSuit)
     {
 	setCardFaceUpOrDown (newFaceUpOrDown);
 	setCardSize (newCardSize);
@@ -49,7 +55,8 @@ public class CardClass extends ShapeClass                                       
     }
 
 
-    public CardClass (int newCardSize, int newCardRankValue, int newCardSuit)                           // This is another constructor that sets the encapsulated data with values.
+    // Another overloaded constructor
+    public CardClass (int newCardSize, int newCardRankValue, int newCardSuit)
     {
 	setCardFaceUpOrDown (1);
 	setCardSize (newCardSize);
@@ -60,6 +67,7 @@ public class CardClass extends ShapeClass                                       
     }
 
 
+    // A set method that sets the following variable(s) with value(s) from the parameter(s) that sets the following variables with values from the parameters.
     public void setPrevious (int oldX, int oldY, int oldDeck)
     {
 	previousX = oldX;
@@ -68,155 +76,180 @@ public class CardClass extends ShapeClass                                       
     }
 
 
+    // A get method that returns the value of the previousX.
     public int getPreviousX ()
     {
 	return previousX;
     }
 
 
+    // A get method that returns the value of the previousY.
     public int getPreviousY ()
     {
 	return previousY;
     }
 
 
+    // A get method that returns the value of the previousDeckValue.
     public int getPreviousDeckValue ()
     {
 	return previousDeckValue;
     }
 
 
-    public void setCardFaceUpOrDown (int newFaceUpOrDown)                                               // This is a "set" method to set the card to be faced up or down.
+    // A set method that sets the card to be faced up or down.
+    public void setCardFaceUpOrDown (int newFaceUpOrDown)
     {
+	// Data validation
 	if (newFaceUpOrDown == 1)
 	{
+	    // Set the card to be faced up.
 	    cardFaceUp = 1;
 	}
-	else                                                                                        // Just set the card size to 1.
+	// Data validation
+	else if (newFaceUpOrDown == 0)
 	{
+	    // Set the card to be face down.
 	    cardFaceUp = 0;
 	}
     }
 
 
-    public int getCardFaceUpOrDown ()                                                                   // This is a "get" method to return if the card is faced up or down.
+    // A get method that returns whether the card is faced up or down.
+    public int getCardFaceUpOrDown ()
     {
 	return cardFaceUp;
     }
 
 
-    public void setCardSize (int newCardSize)                                                       // This is a "set" method to set the size of the card.
+    // A set method that sets the size of the card.
+    public void setCardSize (int newCardSize)
     {
+	// Data validation
 	if (newCardSize >= 1 && newCardSize <= 4)
 	{
+	    // Set the size of the card from the value of the parameter.
 	    cardSize = newCardSize;
 	}
-	else                                                                                        // Just set the card size to 1.
+	else
 	{
+	    // Set the size of the card to 1.
 	    cardSize = 1;
 	}
     }
 
 
-    public int getCardSize ()                                                                       // This is a "get" method to return the size of the card.
+    // A get method that returns the value of the size of the card.
+    public int getCardSize ()
     {
 	return cardSize;
     }
 
 
-    public void setCardRankValue (int newCardRankValue)                                                     // This is a "set" method to set the value of the card.
+    // A set method that sets the rank value of the card.
+    public void setCardRankValue (int newCardRankValue)
     {
+	// Data validation
 	if (newCardRankValue >= 1 && newCardRankValue <= 13)
 	{
+	    // Set the rank value of the card from the value of the parameter.
 	    cardRankValue = newCardRankValue;
 	}
-	else                                                                                        // Just set the card value to 1.
+	else
 	{
+	    // Set the rank value of the card to 1.
 	    cardRankValue = 1;
 	}
     }
 
 
-    public int getCardRankValue ()                                                                      // This is a "get" method to return the value of the card.
+    // A get method that returns the rank value of the card.
+    public int getCardRankValue ()
     {
 	return cardRankValue;
     }
 
 
-    public void setCardSuit (int newCardSuit)                                                       // This is a "set" method to set the suit of the card.
+    // A set method that sets the suit of the card.
+    public void setCardSuit (int newCardSuit)
     {
-	if (newCardSuit >= 1 && newCardSuit <= 4)                                                   // This validates the data to see if I am allowed to changed the suit value of the card.
+	// Data validation
+	if (newCardSuit >= 1 && newCardSuit <= 4)
 	{
+	    // Set the suit of the card to the value of the parameter.
 	    cardSuit = newCardSuit;
 	}
-	else                                                                                        // Just set the card suit to 1.
+	else
 	{
+	    // Set the suit of the card to 1.
 	    cardSuit = 1;
 	}
     }
 
 
-    public int getCardSuit ()                                                                       // This is a "get" method to return the suit value of the card.
-
+    // A get method that returns the suit value of the card.
+    public int getCardSuit ()
     {
 	return cardSuit;
     }
 
 
-    public void resizeCard ()                                                                       // This is a method to set the height and width of the card, depending on the variable cardSize.
+    // A method that reizes the width and height of the card.
+    public void resizeCard ()
     {
-	if (cardSize == 1)                                                                          // If the value of the variable cardSize is 1, then set the height of the variable card to 60.
+	if (cardSize == 1)
 	{
 	    setHeight (60);
 	}
-	else if (cardSize == 2)                                                                     // If the value of the variable cardSize is 2, then set the height of the variable card to 80.
+	else if (cardSize == 2)
 	{
 	    setHeight (80);
 	}
-	else if (cardSize == 3)                                                                     // If the value of the variable cardSize is 3, then set the height of the variable card to 100.
+	else if (cardSize == 3)
 	{
 	    setHeight (100);
 	}
-	else if (cardSize == 4)                                                                     // If the value of the variable cardSize is 4, then set the height of the variable card to 120.
+	else if (cardSize == 4)
 	{
 	    setHeight (120);
 	}
-	setWidth ((int) (getHeight () * 0.7));                                                      // Set the width of the card to the height of the card multiplied by 0.7 and convert the result to an integer value.
+	setWidth ((int) (getHeight () * 0.7));
     }
 
 
-    public int resizeText ()                                                                        // This is a method to return the value of the text of the card value.
+    // A method that returns the size of the rank value of the card.
+    public int resizeText ()
     {
-	if (cardSize == 1 || cardSize == 2)                                                         // If the value of the variable cardSize is 1 or 2 , then return 15.
+	if (cardSize == 1 || cardSize == 2)
 	{
 	    return 15;
 	}
-	else if (cardSize == 3 || cardSize == 4)                                                    // If the value of the variable cardSize is 3 or 4, then return 20.
+	else if (cardSize == 3 || cardSize == 4)
 	{
 	    return 20;
 	}
-	else                                                                                        // Just return 15.
+	else
 	{
 	    return 15;
 	}
     }
 
 
-    public void drawCard (Console c)                                                                // This is a "draw" method to draw a card, either the outline of the card.
+    // A draw method that either draws a blank or coloured card.
+    public void drawCard (Console c)
     {
 	resizeCard ();
 
-	int x1 = getCentreX () - (getWidth () / 2);                                                 // Create the x and y points to calculate the corners of the card.
+	int x1 = getCentreX () - (getWidth () / 2);
 	int y1 = getCentreY () - (getHeight () / 2);
 
-	c.setColour (getColour ());                                                                 // Set the colour of the card by "getting" the colour from its super class.
-
-	if (cardSuit >= 1 && cardSuit <= 4)                                                         // If the suit value of the card is between 1 and 4 (inclusive), then draw a rectangle by using the declared variables above, and set the card to be faced up.
+	c.setColour (getColour ());
+	if (cardSuit >= 1 && cardSuit <= 4)
 	{
 	    cardFaceUp = 1;
 	    c.drawRect (x1, y1, getWidth (), getHeight ());
 	}
-	else if (cardSuit == 0)                                                                     // If the suit value of the card is 0, then draw a filled rectangle by using the declared variables above, and set the card to be faced down.
+	else if (cardSuit == 0)
 	{
 	    cardFaceUp = 0;
 	    c.fillRect (x1, y1, getWidth (), getHeight ());
@@ -224,49 +257,67 @@ public class CardClass extends ShapeClass                                       
     }
 
 
-    public void drawText (Console c)                                                                // This is a method to draw the text of the card value.
+    // A draw method that draws the rank value of the card.
+    public void drawText (Console c)
     {
-	Font f1 = new Font ("SanSerif", Font.PLAIN, resizeText ());                                 // Instansiate the Font Class and
-	c.setFont (f1);                                                                             // Set the font.
-	int xPosOfText = (int) (getCentreX () - (getWidth () / 2) + 2);                             // Create the positions of the text of the card value.
-	int yPosOfText = (int) (getCentreY () - (getHeight () / 2) + 15);                           //
+	// Instansiate the Font Class.
+	Font f1 = new Font ("SanSerif", Font.PLAIN, resizeText ());
+
+	// Set the font.
+	c.setFont (f1);
+
+	// Create the positions of the text of the card value.
+	int xPosOfText = (int) (getCentreX () - (getWidth () / 2) + 2);
+	int yPosOfText = (int) (getCentreY () - (getHeight () / 2) + 15);
+
 	c.drawString (Integer.toString (cardRankValue), xPosOfText, yPosOfText);
     }
 
 
+    // A draw method that draws the suit of the card.
     public void drawSuit (Console c)
     {
-	int suitWidth = (int) (getHeight () * 0.25);                                            // Create the required variables to draw a card.
-	int suitHeight = (int) (getHeight () * 0.25);                                           //
-	int suitCX = getCentreX () + (getWidth () / 4);                                         //
-	int suitCY = getCentreY () - (getHeight () / 2) + (suitWidth / 2);                      //
-	Color suitColour = getColour ();                                                        //
-	boolean suitIsFilled = getFilled ();                                                    //
+	// Initialize variables with values to can be used to draw a suit.
+	int suitWidth = (int) (getHeight () * 0.25);
+	int suitHeight = (int) (getHeight () * 0.25);
+	int suitCX = getCentreX () + (getWidth () / 4);
+	int suitCY = getCentreY () - (getHeight () / 2) + (suitWidth / 2);
+	Color suitColour = getColour ();
+	boolean suitIsFilled = getFilled ();
 
-	if (cardSuit == 1 || cardSuit == 3)                                                     // This checks to see if I can change the suit colour of the card, and this applies to the suit colours of a diamond (1) and a heart (3).
+	// Check to see if I can change the suit colour of the card, and this applies to the suit colours of a diamond (1) and a heart (3).
+	if (cardSuit == 1 || cardSuit == 3)
 	{
-	    if (suitColour != Color.white)                                                      // This checks to see if the suit is being drawn, and if it's being drawn, then change the colour of the suit.
+	    // Check to see if the suit is being drawn, and if it's being drawn, then change the colour of the suit.
+	    if (suitColour != Color.white)
 	    {
 		suitColour = Color.red;
 	    }
 	}
 
-	if (cardSuit == 1)                                                                      // If the value of the variable cardSuit is 1, then draw a diamond object (diamond suit).
+
+	if (cardSuit == 1)
 	{
 	    DiamondClass diamondObject = new DiamondClass (suitCX, suitCY, suitWidth, suitHeight, suitColour, suitIsFilled);
 	    diamondObject.draw (c);
 	}
-	else if (cardSuit == 2)                                                                 // If the value of the variable cardSuit is 2, then draw a club object (club suit).
+
+
+	else if (cardSuit == 2)
 	{
 	    ClubClass clubObject = new ClubClass (suitCX, suitCY, suitWidth, suitHeight, suitColour, suitIsFilled);
 	    clubObject.draw (c);
 	}
-	else if (cardSuit == 3)                                                                 // If the value of the variable cardSuit is 3, then draw a heart object (heart suit).
+
+
+	else if (cardSuit == 3)
 	{
 	    HeartClass heartObject = new HeartClass (suitCX, suitCY, suitWidth, suitHeight, suitColour, suitIsFilled);
 	    heartObject.draw (c);
 	}
-	else if (cardSuit == 4)                                                                 // If the value of the variable cardSuit is 4, then draw a spade object (spade suit)
+
+
+	else if (cardSuit == 4)
 	{
 	    SpadeClass spadeObject = new SpadeClass (suitCX, suitCY, suitWidth, suitHeight, suitColour, suitIsFilled);
 	    spadeObject.draw (c);
@@ -274,43 +325,43 @@ public class CardClass extends ShapeClass                                       
     }
 
 
-    public void draw (Console c)                                                                    // This is a "draw" method to draw the entire card which contains the outline, value, and suit of the card.
+    // Overloaded draw method
+    public void draw (Console c)
     {
-	drawCard (c);                                                                               // Draw the outline of the card.
-	if (cardFaceUp == 1)                                                                            // Draw the rest of card value and the suit if the card value is not zero.
-	{
-	    drawText (c);
-	    drawSuit (c);
-	}
+
     }
 
 
+    // A method that uses all the previous stated draws method to draw the entire the card.
     public void draw (Graphics g)
     {
-	drawCard (g);                                                                               // Draw the outline of the card.
-	if (cardFaceUp == 1)                                                                            // Draw the rest of card value and the suit if the card value is not zero.
+	drawCard (g);
+
+	if (cardFaceUp == 1)
 	{
+	    // Draw the rest of card if the card is faced up.
 	    drawText (g);
 	    drawSuit (g);
 	}
     }
 
 
-    public void drawCard (Graphics g)                                                                // This is a "draw" method to draw a card, either the outline of the card.
+    // Overloaded draw method
+    public void drawCard (Graphics g)
     {
 	resizeCard ();
 
-	int x1 = getCentreX () - (getWidth () / 2);                                                 // Create the x and y points to calculate the corners of the card.
+	int x1 = getCentreX () - (getWidth () / 2);
 	int y1 = getCentreY () - (getHeight () / 2);
 
-	g.setColor (getColour ());                                                                 // Set the colour of the card by "getting" the colour from its super class.
+	g.setColor (getColour ());
 
-	if (cardSuit >= 1 && cardSuit <= 4)                                                         // If the suit value of the card is between 1 and 4 (inclusive), then draw a rectangle by using the declared variables above, and set the card to be faced up.
+	if (cardSuit >= 1 && cardSuit <= 4)
 	{
 	    cardFaceUp = 1;
 	    g.drawRect (x1, y1, getWidth (), getHeight ());
 	}
-	else if (cardSuit == 0)                                                                     // If the suit value of the card is 0, then draw a filled rectangle by using the declared variables above, and set the card to be faced down.
+	else if (cardSuit == 0)
 	{
 	    cardFaceUp = 0;
 	    g.fillRect (x1, y1, getWidth (), getHeight ());
@@ -318,49 +369,52 @@ public class CardClass extends ShapeClass                                       
     }
 
 
-    public void drawText (Graphics g)                                                                // This is a method to draw the text of the card value.
+    // Overloaded draw method
+    public void drawText (Graphics g)
     {
-	Font f1 = new Font ("SanSerif", Font.PLAIN, resizeText ());                                 // Instansiate the Font Class and
-	g.setFont (f1);                                                                             // Set the font.
-	int xPosOfText = (int) (getCentreX () - (getWidth () / 2) + 2);                             // Create the positions of the text of the card value.
-	int yPosOfText = (int) (getCentreY () - (getHeight () / 2) + 15);                           //
+	Font f1 = new Font ("SanSerif", Font.PLAIN, resizeText ());
+	g.setFont (f1);
+	int xPosOfText = (int) (getCentreX () - (getWidth () / 2) + 2);
+	int yPosOfText = (int) (getCentreY () - (getHeight () / 2) + 15);
 	g.drawString (Integer.toString (cardRankValue), xPosOfText, yPosOfText);
     }
 
 
-    public void drawSuit (Graphics g)                                                                   // This is an overloaded draw method.
+    // Overloaded draw method
+    public void drawSuit (Graphics g)
     {
-	int suitWidth = (int) (getHeight () * 0.25);                                            // Create the required variables to draw a card.
-	int suitHeight = (int) (getHeight () * 0.25);                                           //
-	int suitCX = getCentreX () + (getWidth () / 4);                                         //
-	int suitCY = getCentreY () - (getHeight () / 2) + (suitWidth / 2);                      //
-	Color suitColour = getColour ();                                                        //
-	boolean suitIsFilled = getFilled ();                                                    //
+	int suitWidth = (int) (getHeight () * 0.25);
+	int suitHeight = (int) (getHeight () * 0.25);
+	int suitCX = getCentreX () + (getWidth () / 4);
+	int suitCY = getCentreY () - (getHeight () / 2) + (suitWidth / 2);
+	Color suitColour = getColour ();
+	boolean suitIsFilled = getFilled ();
 
-	if (cardSuit == 1 || cardSuit == 3)                                                     // This checks to see if I can change the suit colour of the card, and this applies to the suit colours of a diamond (1) and a heart (3).
+	if (cardSuit == 1 || cardSuit == 3)
 	{
-	    if (suitColour != Color.white)                                                      // This checks to see if the suit is being drawn, and if it's being drawn, then change the colour of the suit.
+	    if (suitColour != Color.white)
 	    {
 		suitColour = Color.red;
 	    }
 	}
 
-	if (cardSuit == 1)                                                                      // If the value of the variable cardSuit is 1, then draw a diamond object (diamond suit).
+
+	if (cardSuit == 1)
 	{
 	    DiamondClass diamondObject = new DiamondClass (suitCX, suitCY, suitWidth, suitHeight, suitColour, suitIsFilled);
 	    diamondObject.draw (g);
 	}
-	else if (cardSuit == 2)                                                                 // If the value of the variable cardSuit is 2, then draw a club object (club suit).
+	else if (cardSuit == 2)
 	{
 	    ClubClass clubObject = new ClubClass (suitCX, suitCY, suitWidth, suitHeight, suitColour, suitIsFilled);
 	    clubObject.draw (g);
 	}
-	else if (cardSuit == 3)                                                                 // If the value of the variable cardSuit is 3, then draw a heart object (heart suit).
+	else if (cardSuit == 3)
 	{
 	    HeartClass heartObject = new HeartClass (suitCX, suitCY, suitWidth, suitHeight, suitColour, suitIsFilled);
 	    heartObject.draw (g);
 	}
-	else if (cardSuit == 4)                                                                 // If the value of the variable cardSuit is 4, then draw a spade object (spade suit)
+	else if (cardSuit == 4)
 	{
 	    SpadeClass spadeObject = new SpadeClass (suitCX, suitCY, suitWidth, suitHeight, suitColour, suitIsFilled);
 	    spadeObject.draw (g);
@@ -368,11 +422,13 @@ public class CardClass extends ShapeClass                                       
     }
 
 
+    // Checks to see if the mouse click is inside the card.
     public boolean isPointInside (int px, int py)
     {
-
+	// Checks to see if the mouse click x is in range of the width of the deck.
 	if ((px >= getCentreX () - (getWidth () / 2)) && (px <= getCentreX () + (getWidth () / 2)))
 	{
+	    //Checks to see if the mouse click y is in range of the height of the deck.
 	    if ((py >= getCentreY () - (getHeight () / 2)) && (py <= getCentreY () + (getHeight () / 2)))
 	    {
 		return true;
@@ -386,7 +442,6 @@ public class CardClass extends ShapeClass                                       
 	{
 	    return false;
 	}
-
     } // CardClass class
 }
 
