@@ -8,16 +8,16 @@ public class PilesClass extends DeckClass
 
     public PilesClass ()
     {
-	super ('s');
+	super ("standard");
 	sizeInterval = 20;
     }
 
 
-    public PilesClass (char typeOfPile)
+    public PilesClass (String typeOfPile, int newCX, int newCY)
     {
-	if (typeOfPile == 'p')
+	if (typeOfPile.equals ("piles"))
 	{
-	    super ('p');
+	    super ("piles");
 	    sizeInterval = 20;
 	}
     }
@@ -25,7 +25,6 @@ public class PilesClass extends DeckClass
 
     public void draw (Console c)
     {
-
     }
 
 

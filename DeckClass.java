@@ -197,8 +197,10 @@ public class DeckClass extends ShapeClass
 	}
 	else
 	{
-	    g.setColor (Color.red);
-	    g.fillRect (getCentreX (), getCentreY (), getHeight (), getWidth ());
+	    //g.setColor (Color.red);
+	    //g.fillRect (getCentreX (), getCentreY (), getHeight (), getWidth ());
+	    cardAt (deck.size () - 1).setCentre (getCentreX (), getCentreY ());
+	    cardAt (deck.size () - 1).draw (g);
 	}
     }
 } // DeckClass class

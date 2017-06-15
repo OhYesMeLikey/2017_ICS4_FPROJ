@@ -19,7 +19,7 @@ public class GolfSolitaire2 extends Applet implements ActionListener, MouseListe
 
     public void init ()
     {
-	g = getGraphics (); // gets canvas created by browser-
+	g = getGraphics ();
 	setSize (800, 500);
 
 	// Instansiating the three previous decks.
@@ -31,7 +31,6 @@ public class GolfSolitaire2 extends Applet implements ActionListener, MouseListe
 	addMouseMotionListener (this);
 
 	initializeAllDecks ();
-
     } // init method
 
 
@@ -64,9 +63,6 @@ public class GolfSolitaire2 extends Applet implements ActionListener, MouseListe
     }
 
 
-
-
-
     /* Draw all the required decks for the game.
     // All the 7 "piles", "stock", and "foundation" decks are drawn to the screen.
     // If that deck isn't empty, then draw the deck that correlates to the index 'i',
@@ -86,6 +82,7 @@ public class GolfSolitaire2 extends Applet implements ActionListener, MouseListe
 		    }
 		}
 	    }
+
 	    // Draw the stock deck.
 	    stockDeck.draw (g);
 
@@ -105,12 +102,60 @@ public class GolfSolitaire2 extends Applet implements ActionListener, MouseListe
 		    }
 		}
 	    }
-	    // Erase the stock deck.
-	    stockDeck.draw (g);
 
-	    // Erase the foundation deck.
-	    foundationDeck.draw (g);
+	    // Draw the stock deck.
+	    stockDeck.erase (g);
 	}
+    }
+
+
+    public void mouseClicked (MouseEvent e)
+    {
+	/*
+	    // Check if the mouse was clicked in any of the 7 piles deck.
+	    for (int i = 0 ; i < 7 ; i++)
+	    {
+		if (pilesDeck [i].isPointInside (e.getX (), e.getY ()))
+		{
+		    // Check if the mouse was clicked in any of the cards from that piles deck.
+		    for (int j = 0 ; j < 5 ; j++)
+		    {
+			if (pilesDeck [i].cardAt (pilesDeck [i].deckSize () - 1).isPointInside (e.getX (), e.getY ()))
+			{
+			    if (firstMove)
+			    {
+				foundationDeck.addCard (pilesDeck [i].cardAt (pilesDeck [i].deckSize () - 1));
+				foundationDeck.cardAt ((foundationDeck.deckSize () - 1)).setCentre (300, 300);
+				pilesDeck [i].removeCardFromPos (pilesDeck [i].deckSize () - 1);
+				System.out.println ("piles decks " + i);
+				firstMove = false;
+			    }
+			    //else
+			    {
+			    }
+			}
+
+		    }
+		}
+	    }
+	    */
+
+	// Check if the mouse was clicked in the stock deck.
+	if (stockDeck.isPointInside (e.getX (), e.getY ()))
+	{
+	    // Add a card to the foundation deck by dealing a card from the stock deck.
+	    foundationDeck.addCard (stockDeck.deal ());
+
+	    // Set the centre of the added card.
+	    foundationDeck.cardAt ((foundationDeck.deckSize () - 1)).setCentre (300, 300);
+
+	    // Flip the added card.
+	    foundationDeck.cardAt ((foundationDeck.deckSize () - 1)).flipCard ();
+	    System.out.println ("stock deck");
+	    System.out.println (stockDeck.deckSize () - 1);
+	}
+
+	repaint ();
     }
 
 
@@ -178,6 +223,15 @@ public class GolfSolitaire2 extends Applet implements ActionListener, MouseListe
 		repaint ();
 	    }
 	    */
+	for (int i = 0 ; i < 7 ; i++)
+	{
+	    if (!pilesDeck [i].isEmpty)
+	    {
+		if (pilesDeck [i].cardAt (pilesDeck [i].deckSize () - 1).isPointInside (e.getX (), e.getY ()))
+		{
+		}
+	    }
+	}
     }
 
 
@@ -190,58 +244,6 @@ public class GolfSolitaire2 extends Applet implements ActionListener, MouseListe
 	    }
 	    */
     }
-
-
-    /* Move a valid card into the foundation's deck
-    // Do the following checks for 8 times
-    // On the first click, any card from any clicked deck will be moved into the foundation's deck.
-    //   */
-
-    public void mouseClicked (MouseEvent e)
-    {
-	// Check if the mouse was clicked in any of the 7 piles deck.
-	for (int i = 0 ; i < 7 ; i++)
-	{
-	    if (pilesDeck [i].isPointInside (e.getX (), e.getY ()))
-	    {
-		for (int j = 0 ; j < 5 ; j++)
-		{
-		    if (pilesDeck [i].cardAt (pilesDeck [i].deckSize () - 1).isPointInside (e.getX (), e.getY ()))
-		    {
-			if (firstMove)
-			{
-			    foundationDeck.addCard (0, pilesDeck [i].cardAt (pilesDeck [i].deckSize () - 1));
-			    pilesDeck [i].removeCardFromPos (pilesDeck [i].deckSize () - 1);
-			}
-			firstMove = false;
-			//else
-			{
-			}
-		    }
-
-		}
-	    }
-	}
-	repaint ();
-    }
-
-
-
-
-
-    /*
-	public void mouseClicked (MouseEvent e)
-	{
-	    for (int i = 1 ; i < 9 ; i++)
-	    {
-		//pilesDeck [9].cardAt (pilesDeck [i].deckSize () - 1).setCentre (pilesDeck [9].getCentreX (), pilesDeck [9].getCentreY ());
-		pilesDeck [9].addCard (pilesDeck [i].deal ());
-		pilesDeck [i].deleteCard (pilesDeck [i].deckSize ());
-		break;
-	    }
-	    repaint ();
-	}
-	*/
 
 
     public void mouseEntered (MouseEvent e)

@@ -90,7 +90,6 @@ public abstract class ShapeClass                                                
 
     public void setColour (Color cNewColor)                                                     // This is a "set" method to set the colour of the shape.
     {
-
 	shapeColour = cNewColor;
     }
 

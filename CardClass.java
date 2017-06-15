@@ -194,6 +194,19 @@ public class CardClass extends ShapeClass
     }
 
 
+    public void flipCard ()
+    {
+	if (cardFaceUp == 1)
+	{
+	    cardFaceUp = 0;
+	}
+	else
+	{
+	    cardFaceUp = 1;
+	}
+    }
+
+
     // A method that reizes the width and height of the card.
     public void resizeCard ()
     {
